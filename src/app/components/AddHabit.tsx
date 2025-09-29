@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHabits } from "../hooks/useHabits";
 import { ChevronLeft } from "@deemlol/next-icons";
+import { Text } from "./Text";
 
 interface AddHabitProps {
   onBack: () => void;
@@ -37,7 +38,9 @@ export const AddHabit = ({ onBack }: AddHabitProps) => {
         >
           <ChevronLeft className="h-5 w-5" />
         </button>
-        <h1 className="text-2xl font-medium text-gray-600">Add habit</h1>
+        <Text variant="H4" className="font-semibold">
+          Add habit
+        </Text>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
