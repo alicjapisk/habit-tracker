@@ -38,14 +38,5 @@ export const useCompletions = () => {
     );
   };
 
-  const clearHabitCompletions = (habitId: string) => {
-    setCompletions(completions.filter((c) => c.habitId !== habitId));
-  };
-
-  return {
-    completions,
-    toggleHabitCompletion,
-    getHabitCompletion,
-    clearHabitCompletions,
-  };
+  return { completions, toggleHabitCompletion, getHabitCompletion };
 };

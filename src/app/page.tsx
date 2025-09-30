@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/dashboard/Dashboard";
 import { View } from "./types";
 import { AddHabit } from "./components/add-habit/AddHabit";
 import { History } from "./components/History";

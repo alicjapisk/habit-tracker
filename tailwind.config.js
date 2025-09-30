@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: { lg: "2.5rem", md: "0rem" },
+      padding: { lg: "10rem", md: "0rem" },
     },
     screens: {
       lg: { min: "1600px", max: "" },

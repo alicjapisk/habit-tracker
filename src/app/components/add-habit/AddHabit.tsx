@@ -26,14 +26,16 @@ export const AddHabit = ({ onBack }: AddHabitProps) => {
     e.preventDefault();
 
     if (habitName.trim()) {
-      addHabit(habitName.trim());
+      addHabit(habitName.trim(), selectedEmoji, selectedColor);
       setHabitName("");
+      setSelectedEmoji("✨");
+      setSelectedColor("from-purple-500 to-pink-500");
       onBack();
     }
   };
 
   return (
-    <div className={`min-h-screen  p-4`}>
+    <div className={`min-h-screen p-4 mb-[50px]`}>
       <BackButton onClick={onBack} text="Back to Habits" />
       <div className="flex flex-col items-center pb-[16px]">
         <Text variant="H2" htmlFor="add-habit-header">
