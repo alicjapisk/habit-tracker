@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sourGummy.variable} font-sour-gummy`}>
+      <body className={`${sourGummy.variable} font-sour-gummy bg-pink-500/10`}>
         {children}
       </body>
     </html>

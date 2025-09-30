@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Dashboard from "./components/Dashboard";
 import { View } from "./types";
-import { AddHabit } from "./components/AddHabit";
+import { AddHabit } from "./components/add-habit/AddHabit";
 import { History } from "./components/History";
 
 export default function Home() {
@@ -28,5 +28,5 @@ export default function Home() {
         return <Dashboard onNavigate={handleNavigate} />;
     }
   };
-  return <div className="w-full h-full container">{renderCurrentView()}</div>;
+  return <div className="w-full h-full container ">{renderCurrentView()}</div>;
 }

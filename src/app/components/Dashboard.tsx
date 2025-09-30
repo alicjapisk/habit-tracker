@@ -13,11 +13,10 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
   const progress = useTodayProgress(habits, completions);
 
   return (
-    <div className="min-h-screen bg-white p-4 pb-20">
+    <div className="min-h-screen p-4 pb-20">
       <div className="mb-6">
         <h1 className="mb-4 text-2xl font-medium text-gray-600">My habits</h1>
 
-        {/* Progress Bar */}
         {habits.length > 0 && (
           <div className="space-y-2">
             <div className="flex justify-between">

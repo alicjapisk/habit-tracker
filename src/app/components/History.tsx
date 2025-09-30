@@ -39,7 +39,7 @@ export const History = ({ onBack }: HistoryProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-white p-4">
+    <div className="min-h-screen p-4">
       <div className="flex items-center mb-6">
         <button onClick={onBack} className="mr-2 p-2 hover:bg-gray-100 rounded">
           <ChevronLeft size={24} color="black" />

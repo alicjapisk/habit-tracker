@@ -1,6 +1,6 @@
 import React from "react";
 
-export type Variant = "H1" | "H2" | "H3" | "H4" | "T1" | "A1" | "S1";
+export type Variant = "H1" | "H2" | "H4" | "H5" | "A1" | "T1" | "S1";
 
 const variantStyles: Record<Variant, string> = {
   H1: `
@@ -13,25 +13,25 @@ const variantStyles: Record<Variant, string> = {
     md:text-1440x/H2 
     sm:text-360x/H2
   `,
-  H3: `
-    lg:text-1920x/H3 
-    md:text-1440x/H3
-    sm:text-360x/H3
-  `,
   H4: `
-    lg:text-1920x/H4 
+    lg:text-1920x/H4
     md:text-1440x/H4
     sm:text-360x/H4
   `,
-  T1: `
-    lg:text-1920x/T1 
-    md:text-1440x/T1 
-    sm:text-360x/T1 
+  H5: `
+    lg:text-1920x/H5
+    md:text-1440x/H5
+    sm:text-360x/H5
   `,
   A1: `
     lg:text-1920x/A1 
     md:text-1440x/A1 
     sm:text-360x/A1
+  `,
+  T1: `
+    lg:text-1920x/T1 
+    md:text-1440x/T1 
+    sm:text-360x/T1 
   `,
   S1: `
     lg:text-1920x/S1 
@@ -45,14 +45,20 @@ type Props = {
   children: React.ReactNode;
   as?: React.ElementType;
   className?: string;
+  htmlFor?: string;
 };
 
 export const Text: React.FC<Props> = ({
   variant,
   children,
+  htmlFor,
   as: Component = "p",
   className = "",
 }) => {
-  const classes = `${variantStyles[variant]} ${className}`;
-  return <Component className={classes}>{children}</Component>;
+  const classes = `${variantStyles[variant]} ${className}  text-gray-700`;
+  return (
+    <Component className={classes} htmlFor={htmlFor}>
+      {children}
+    </Component>
+  );
 };
