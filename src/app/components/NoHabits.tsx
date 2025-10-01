@@ -1,5 +1,5 @@
-import ButtonPrimary from "../ButtonPrimary";
-import { Text } from "../Text";
+import ButtonPrimary from "./ButtonPrimary";
+import { Text } from "./Text";
 import { Plus } from "@deemlol/next-icons";
 
 interface Props {

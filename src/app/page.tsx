@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import Dashboard from "./components/dashboard/Dashboard";
 import { View } from "./types";
-import { AddHabit } from "./components/add-habit/AddHabit";
 import { History } from "./components/History";
+import Dashboard from "./components/dashboard/Dashboard";
+import { AddHabit } from "./components/add-habit/AddHabit";
 
 export default function Home() {
   const [currentView, setCurrentView] = useState<View>("dashboard");
@@ -23,7 +23,7 @@ export default function Home() {
       case "add-habit":
         return <AddHabit onBack={handleBack} />;
       case "history":
-        return <History onBack={handleBack} />;
+        return <History onBack={handleBack} onNavigate={handleNavigate} />;
       default:
         return <Dashboard onNavigate={handleNavigate} />;
     }

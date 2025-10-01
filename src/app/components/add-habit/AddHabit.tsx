@@ -8,7 +8,7 @@ import SelectHabitColor from "./SelectHabitColor";
 import HabitPreview from "./HabitPreview";
 import BackButton from "../BackButton";
 import AddHabitButton from "./AddHabitButton";
-import { Text } from "../Text";
+import SubHeader from "../SubHeader";
 
 interface AddHabitProps {
   onBack: () => void;
@@ -37,11 +37,7 @@ export const AddHabit = ({ onBack }: AddHabitProps) => {
   return (
     <div className={`min-h-screen p-4 mb-[50px]`}>
       <BackButton onClick={onBack} text="Back to Habits" />
-      <div className="flex flex-col items-center pb-[16px]">
-        <Text variant="H2" htmlFor="add-habit-header">
-          ✨ Create new habits ✨
-        </Text>
-      </div>
+      <SubHeader text="Create new habits" emoji="✨" />
       <form onSubmit={handleSubmit} className="space-y-6">
         <SelectHabitName habitName={habitName} setHabitName={setHabitName} />
         <SelectHabitEmoji

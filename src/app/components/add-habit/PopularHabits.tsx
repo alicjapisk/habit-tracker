@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
-import { Text } from "../Text";
 import Label from "./Label";
+import HabitBadge from "../HabitBadge";
 
 interface Props {
   setHabitName: Dispatch<SetStateAction<string>>;
@@ -63,17 +63,12 @@ export default function PopularHabits({
             }}
             className="group w-full text-left p-4 bg-white/50 backdrop-blur-sm hover:bg-white/80 rounded-2xl border border-white/20 shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-200"
           >
-            <div className="flex items-center">
-              <div
-                className={`w-10 h-10 bg-gradient-to-r ${example.color} rounded-xl flex items-center justify-center mr-4 shadow-lg`}
-              >
-                {example.emoji}
-              </div>
-              <Text variant="T1" htmlFor="habit-example">
-                {example.text}
-              </Text>
-              <span className="font-medium"></span>
-            </div>
+            <HabitBadge
+              text={example.text}
+              emoji={example.emoji}
+              color={example.color}
+              size="md"
+            />
           </button>
         ))}
       </div>

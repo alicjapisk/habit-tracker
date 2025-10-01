@@ -1,5 +1,6 @@
 import { Habit } from "@/app/types";
 import { Check } from "@deemlol/next-icons";
+import HabitBadge from "../HabitBadge";
 
 interface Props {
   habits: Habit[];
@@ -22,16 +23,12 @@ const HabitsList = ({
       >
         <div className={`h-2 bg-gradient-to-r ${habit.color}`}></div>
         <div className="p-5 flex items-center justify-between">
-          <div className="flex items-center flex-1">
-            <div
-              className={`w-12 h-12 bg-gradient-to-r ${habit.color} rounded-xl flex items-center justify-center mr-4 text-white text-lg shadow-lg flex-shrink-0`}
-            >
-              {habit.emoji}
-            </div>
-            <span className="text-gray-800 font-medium flex-1 min-w-0">
-              {habit.name}
-            </span>
-          </div>
+          <HabitBadge
+            text={habit.name}
+            emoji={habit.emoji}
+            color={habit.color}
+            size="lg"
+          />
           <div className="relative ml-4 flex-shrink-0">
             <input
               type="checkbox"

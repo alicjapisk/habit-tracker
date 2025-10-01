@@ -4,7 +4,7 @@ import { useCompletions } from "../../hooks/useCompletions";
 import { useTodayProgress } from "../../hooks/useTodayProgress";
 import ProgressBar from "./ProgressBar";
 import HabitsList from "./HabitsList";
-import NoHabits from "./NoHabits";
+import NoHabits from "../NoHabits";
 import Header from "./Header";
 import ButtonPrimary from "../ButtonPrimary";
 
@@ -18,7 +18,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
   const progress = useTodayProgress(habits, completions);
 
   return (
-    <div className="min-h-screen p-4 pb-20">
+    <div className="min-h-screen p-4 pb-20 pt-7">
       <div className="mb-6 flex flex-row justify-between">
         <Header />
         <div className="flex flex-row gap-[10px]">
