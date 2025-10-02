@@ -1,4 +1,4 @@
-import { Habit } from "../types";
+import { Habit, HabitCompletion } from "../types";
 import { useLocalStorageState } from "./useLocalStorageState";
 
 export const useHabits = () => {
@@ -23,6 +23,13 @@ export const useHabits = () => {
 
   const deleteHabit = (habitId: string) => {
     setHabits(habits.filter((h) => h.id !== habitId));
+
+    const completions: HabitCompletion[] = JSON.parse(
+      localStorage.getItem("habit-completions") ?? "[]"
+    );
+
+    const updated = completions.filter((c) => c.habitId !== habitId);
+    localStorage.setItem("habit-completions", JSON.stringify(updated));
   };
 
   return { habits, addHabit, deleteHabit };
