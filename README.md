@@ -36,4 +36,13 @@ npm install
 npm run dev
 ```
 
+## 🌍 Live Demo
+
+You can check out the live version of the app here:  
+👉 [Habit Tracker on Vercel](https://habit-tracker-ochre-delta.vercel.app)
+
+## 🎥 Demo
+
+Here’s a quick preview of how the app works:
+
 ![Alt Text](./app.gif)
