@@ -30,8 +30,8 @@ You can add your own habits, mark them as completed ✅, and track your daily pr
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/alicjapisk/rec-task-xelerit.git
-cd rec-task-xelerit
+git clone https://github.com/alicjapisk/habit-tracker.git
+cd habit-tracker
 npm install
 npm run dev
 ```
