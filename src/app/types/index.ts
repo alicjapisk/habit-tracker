@@ -3,6 +3,7 @@ export interface Habit {
   name: string;
   emoji: string;
   color: string;
+  goal: number;
   createdAt: string;
 }
 

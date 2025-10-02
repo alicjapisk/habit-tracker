@@ -26,7 +26,7 @@ const CongratulationsMessage = ({ progress }: Props) => {
         <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-3 rounded-full shadow-xl backdrop-blur-sm">
           <div className="flex items-center space-x-2">
             <span>🎉</span>
-            <Text variant="A1" className="text-white">
+            <Text variant="A1" className="text-white text-center">
               Congratulations! 100% today!
             </Text>
             <span>🎉</span>

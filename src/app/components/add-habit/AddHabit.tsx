@@ -9,6 +9,7 @@ import HabitPreview from "./HabitPreview";
 import BackButton from "../BackButton";
 import AddHabitButton from "./AddHabitButton";
 import SubHeader from "../SubHeader";
+import SelectHabitGoal from "./SelectHabitGoal";
 
 interface AddHabitProps {
   onBack: () => void;
@@ -21,15 +22,17 @@ export const AddHabit = ({ onBack }: AddHabitProps) => {
   const [selectedColor, setSelectedColor] = useState(
     "from-purple-500 to-pink-500"
   );
+  const [goal, setGoal] = useState(14);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (habitName.trim()) {
-      addHabit(habitName.trim(), selectedEmoji, selectedColor);
+      addHabit(habitName.trim(), selectedEmoji, selectedColor, goal);
       setHabitName("");
       setSelectedEmoji("✨");
       setSelectedColor("from-purple-500 to-pink-500");
+      setGoal(14);
       onBack();
     }
   };
@@ -48,6 +51,7 @@ export const AddHabit = ({ onBack }: AddHabitProps) => {
           selectedColor={selectedColor}
           setSelectedColor={setSelectedColor}
         />
+        <SelectHabitGoal goal={goal} setGoal={setGoal} />
         <HabitPreview
           habitName={habitName}
           selectedColor={selectedColor}

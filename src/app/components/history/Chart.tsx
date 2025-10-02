@@ -26,38 +26,44 @@ export const Chart = ({
 
   return (
     <div>
-      <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-6 shadow-xl border border-white/20 overflow-x-auto">
-        <div className="min-w-max flex flex-col items-center">
-          <div
-            className="grid gap-3"
-            style={{
-              gridTemplateColumns: `270px repeat(${dates.length}, 45px)`,
-            }}
-          >
-            <div className="py-3">
-              <Text variant="T1" className="font-semibold">
-                Habits
-              </Text>
+      <div className="bg-white/70 backdrop-blur-sm rounded-3xl pl-6 py-6 shadow-xl border border-white/20 overflow-x-auto">
+        <div className="flex">
+          <div className="flex-shrink-0 sticky left-0 z-10 ">
+            <Text variant="T1" className="font-semibold mt-[12px]">
+              Habits
+            </Text>
+            <div className="mt-[27px]">
+              {habits.map((habit) => (
+                <div
+                  key={habit.id}
+                  className="flex items-center justify-between py-4 pr-4 lg:w-[300px] md:w-[300px] w-[250px] h-[80px] sm:w-[200px] "
+                >
+                  <HabitBadge
+                    text={habit.name}
+                    emoji={habit.emoji}
+                    color={habit.color}
+                    size="sm"
+                  />
+                  <DeleteHabit
+                    habitId={habit.id}
+                    habitName={habit.name}
+                    handleDeleteHabit={handleDeleteHabit}
+                  />
+                </div>
+              ))}
             </div>
-            <Dates dates={dates} />
+          </div>
 
-            {habits.map((habit) => {
-              return (
+          <div className="overflow-x-auto ">
+            <div
+              className="grid"
+              style={{
+                gridTemplateColumns: `repeat(${dates.length}, 45px)`,
+              }}
+            >
+              <Dates dates={dates} />
+              {habits.map((habit) => (
                 <div key={habit.id} className="contents">
-                  <div className="flex items-center justify-between py-4 pr-4 border-r border-gray-200/50">
-                    <HabitBadge
-                      text={habit.name}
-                      emoji={habit.emoji}
-                      color={habit.color}
-                      size="sm"
-                    />
-                    <DeleteHabit
-                      habitId={habit.id}
-                      habitName={habit.name}
-                      handleDeleteHabit={handleDeleteHabit}
-                    />
-                  </div>
-
                   {dates.map((date) => (
                     <CompletionCell
                       key={date.toISOString()}
@@ -67,8 +73,8 @@ export const Chart = ({
                     />
                   ))}
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
         </div>
       </div>

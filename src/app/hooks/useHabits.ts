@@ -7,13 +7,15 @@ export const useHabits = () => {
   const addHabit = (
     name: string,
     emoji: string = "✨",
-    color: string = "from-purple-500 to-pink-500"
+    color: string = "from-purple-500 to-pink-500",
+    goal: number
   ) => {
     const newHabit: Habit = {
       id: Date.now().toString(),
       name,
       emoji,
       color,
+      goal,
       createdAt: new Date().toISOString(),
     };
     setHabits([...habits, newHabit]);
