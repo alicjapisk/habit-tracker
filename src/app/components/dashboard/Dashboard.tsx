@@ -7,6 +7,7 @@ import HabitsList from "./HabitsList";
 import NoHabits from "../NoHabits";
 import Header from "./Header";
 import ButtonPrimary from "../ButtonPrimary";
+import CongratulationsMessage from "./CongratulationsMessage";
 
 interface DashboardProps {
   onNavigate: (view: "add-habit" | "history") => void;
@@ -19,21 +20,26 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
 
   return (
     <div className="min-h-screen p-4 pb-20 pt-7">
-      <div className="mb-6 flex flex-row justify-between">
+      <div className="mb-6 flex flex-row sm:flex-col sm:items-center sm:gap-[20px] justify-between">
         <Header />
-        <div className="flex flex-row gap-[10px]">
-          <div>
-            <ButtonPrimary
-              text="History"
-              icon={Activity}
-              onClick={() => onNavigate("history")}
-            />
+        <div className="flex flex-col justify-between sm:gap-[16px]">
+          <div className="flex flex-row gap-[10px] justify-end sm:justify-center">
+            <div>
+              <ButtonPrimary
+                text="History"
+                icon={Activity}
+                onClick={() => onNavigate("history")}
+              />
+            </div>
+            <div>
+              <ButtonPrimary
+                icon={Plus}
+                onClick={() => onNavigate("add-habit")}
+              />
+            </div>
           </div>
-          <div>
-            <ButtonPrimary
-              icon={Plus}
-              onClick={() => onNavigate("add-habit")}
-            />
+          <div className="self-end ">
+            <CongratulationsMessage progress={progress} />
           </div>
         </div>
       </div>

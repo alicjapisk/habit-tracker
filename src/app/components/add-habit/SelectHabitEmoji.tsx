@@ -51,7 +51,7 @@ export default function SelectHabitEmoji({
         fromColor="green-500"
         toColor="emerald-500"
       />
-      <div className="grid grid-cols-10 gap-3">
+      <div className="grid  grid-cols-10 sm:grid-cols-5  gap-3">
         {emojis.map((emoji) => (
           <button
             key={emoji}
